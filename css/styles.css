@@ -588,7 +588,7 @@ img {
     justify-content: center;
     align-items: center;
 
-    opacity: 0;
+    opacity: 
         pointer-events: none;
     transition: opacity 250ms ease-in-out;
 }
@@ -655,34 +655,32 @@ img {
     letter-spacing: 0.04em;
     color: #8e8f99;
     padding-left: 12px;
+    position: relative;
 }
 
 .form-person-icon {
-    position: relative;
+    
 }
 
 .form-person {
     fill: #4d5ae5;
-    stroke: #fff;
     position: absolute;
-    left: 16px;
-    top: 11px;
+    left: 24px;
+    top: 42px;
 }
 
 .form-phone {
     fill: #2e2f42;
-    stroke: #fff;
     position: absolute;
-    left: 16px;
-        top: 11px;
+    left: 24px;
+    top: 42px;
 }
 
 .form-email {
     fill: #2e2f42;
-        stroke: #fff;
-        position: absolute;
-        left: 16px;
-            top: 11px;
+    position: absolute;
+    left: 24px;
+    top: 42px;
 }
 
 .form-modal-input {
