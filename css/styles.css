@@ -538,12 +538,9 @@ img {
     font-weight: 500;
 }
 
-.footer-label {
-    gap: 24px;
-}
-
 .footer-form {
     display: flex;
+    gap: 24px;
 }
 
 .footer-icon {
@@ -595,7 +592,12 @@ img {
     line-height: 1.5;
     letter-spacing: 0.04em;
     cursor: pointer;
+}
+
+.footer-frame {
     margin-left: 16px;
+    fill: #ffffff;
+    margin: auto;
 }
 
 .form {
