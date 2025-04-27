@@ -533,10 +533,19 @@ img {
     margin-left: 60px;
 }
 
+.subscribe-text {
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
 .footer-label {
     display: flex;
     margin-top: 16px;
     gap: 24px;
+}
+
+.footer-form {
+    display: flex;
 }
 
 .footer-icon {
@@ -576,8 +585,9 @@ img {
 }
 
 .form {
-
-    background-color: rgba(46, 47, 66, 0.7);
+    padding: 72px 24px 24px 24px;
+    position: fixed;
+    background-color: rgba(46, 47, 66, 0.4);
     position: fixed;
     top: 0;
     left: 0;
@@ -588,9 +598,9 @@ img {
     justify-content: center;
     align-items: center;
 
-    opacity: 0;
+    opacity: 0
     pointer-events: none;
-    transition: opacity 250ms ease-in-out;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form.is-open {
@@ -599,19 +609,30 @@ img {
 }
 
 .form-modal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 408px;
+    min-height: 584px;
+    background: #fcfcfc;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
     position: absolute;
     background-color: #fff;
-    border-radius: 4px;
     padding: 15px;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
-    max-width: 413px;
-
     display: flex;
     flex-direction: column;
     border: 1px solid #4d5ae5;
 }
 
 .form-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
     top: 24px;
     right: 24px;
     position: absolute;
@@ -625,71 +646,55 @@ img {
 }
 
 .form-modal-icons {
-    fill: black;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-icons:hover {
-    background-color: #4d5ae5;
-}
-
-.form-icons:hover .form-modal-icons{
-    fill: white;
+.form-icons:hover,
+.form-icons:focus {
+    background-color: #404bbf;
+    fill: #ffffff;
+    border: none;
 }
 
 .form-title {
-    padding-top: 57px;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
-    letter-spacing: 0.02em;
     text-align: center;
-    color: #2e2f42;
+    letter-spacing: 0.02em;
+    color: #2E2F42;
+    margin-bottom: 16px;
+
+    padding-top: 57px;
+    font-weight: 500;
 }
 
 .form-modal-label {
-    padding-top: 16px;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 1.16667;
-    letter-spacing: 0.04em;
-    color: #8e8f99;
-    padding-left: 12px;
-    position: relative;
+    margin-bottom: 8px;
 }
 
 .form-person-icon {
-    
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    display: block;
+    margin-bottom: 4px;
 }
 
-.form-person {
-    fill: #4d5ae5;
-    position: absolute;
-    left: 24px;
-    top: 42px;
-}
-
-.form-phone {
-    fill: #2e2f42;
-    position: absolute;
-    left: 24px;
-    top: 42px;
-}
-
-.form-email {
-    fill: #2e2f42;
-    position: absolute;
-    left: 24px;
-    top: 42px;
+.form-name {
+    position: relative;
 }
 
 .form-modal-input {
+    width: 100%;
+    height: 40px;
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
-    width: 360px;
-    height: 40px;
-    margin-top: 4px;
-    padding-left: 38px
+    background-color: transparent;
+    padding-left: 38px;
+    outline: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-modal-input:focus {
@@ -697,23 +702,48 @@ img {
     outline: none;
 }
 
-.form-modal-comment {
-    margin-top: 4px;
+.form-person {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-person:focus {
+    fill: #4D5AE5;
+}
+
+.form-phone {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-email {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-comment {
-    resize: none;
-    font-weight: 400;
+    width: 100%;
+    height: 120px;
     font-size: 12px;
-    line-height: 1.16667;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: rgba(46, 47, 66, 0.4);
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
-    width: 360px;
-    height: 120px;
-    padding-left: 16px;
-    padding-top: 8px;
+    background-color: transparent;
+    padding: 8px 16px;
+    outline: transparent;
+    resize: none;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-comment:focus {
@@ -722,44 +752,55 @@ img {
 }
 
 .checkbox {
-    margin-top: 16px;
-    padding-left: 12px;
+    margin-bottom: 24px;
 }
 
 .form-checkbox {
-    font-weight: 400;
     font-size: 12px;
-    line-height: 1.16;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8e8f99;
 }
 
 .form-span {
-    line-height: 1.33333;
+    line-height: 1.3;
     text-decoration: underline;
     text-decoration-skip-ink: none;
     color: #4d5ae5;
     cursor: pointer;
 }
 
-.form-button-class {
-    margin: auto;
-    margin-top: 16px;
+input:checked .form-span{
+    background-color: #404bbf;
+    border: none;
+    fill: #F4F4FD;
+}
+
+.form-span-icon {
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
 }
 
 .form-button {
-    border-radius: 4px;
-    padding: 16px 32px;
-    width: 169px;
-    height: 56px;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-    background: #4d5ae5;
+    font-family: "Roboto", sans-serif;
+    display: block;    
+    min-width: 169px;
+    height: 56px;    
+    background-color: #4d5ae5;
     border: none;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
-    letter-spacing: 0.04em;
-    text-align: center;
-    color: #fff;
+    letter-spacing: 0.04em;    
+    color: #ffffff;
     cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin: auto;
 }
