@@ -539,8 +539,7 @@ img {
 }
 
 .footer-label {
-    margin-top: 16px;
-    gap: 24px;
+    
 }
 
 .footer-form {
@@ -608,6 +607,7 @@ img {
 }
 
 .form-modal {
+    padding: 72px 24px 24px 24px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
